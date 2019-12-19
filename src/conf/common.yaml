@@ -191,6 +191,7 @@ redis_volume_size: 2Gi
 # whether to install a monitoring 
 # if you don`t have prometheus monitoring, must set monitoring_enabled true
 # if you set monitoring_enabled false, need to set prometheusEndpoint prometheusSecondaryEndpoint in `kubesphere-minimal.yaml`
+# in order to make console show correct, Need to create prometheusrules by manual
 monitoring_enabled: false
 
 # monitoring deployment configuration
