@@ -34,6 +34,9 @@ data:
       port: 30880
 
     monitoring:
+      enabled: False
+      prometheusEndpoint: http://prometheus-prometheus-oper-prometheus.monitoring.svc:9090
+      prometheusSecondaryEndpoint: http://prometheus-prometheus-oper-prometheus.monitoring.svc:9090
       prometheusReplicas: 1
       prometheusMemoryRequest: 400Mi
       prometheusVolumeSize: 20Gi

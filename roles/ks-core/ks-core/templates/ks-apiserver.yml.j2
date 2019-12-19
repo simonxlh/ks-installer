@@ -29,6 +29,14 @@ spec:
       - command:
         - ks-apiserver
         - --logtostderr=true
+        {% if monitoring.enabled is defined and monitoring.enabled == false %}
+        {% if monitoring.prometheusEndpoint is defined and monitoring.prometheusSecondaryEndpoint is defined  %}
+        
+        - --prometheus-endpoint={{ monitoring.prometheusEndpoint }}
+        - --prometheus-secondary-endpoint={{ monitoring.prometheusSecondaryEndpoint }}
+        {% endif %}
+        {% endif %}
+        
         image: {{ ks_apiserver_repo }}:{{ ks_apiserver_tag }}
         imagePullPolicy: {{ ks_image_pull_policy }}
         name: ks-apiserver

@@ -188,7 +188,11 @@ redis_volume_size: 2Gi
 
 
 # MONITORING CONFIGURATION
-# monitoring is a MUST required component for KubeSphere,
+# whether to install a monitoring 
+# if you don`t have prometheus monitoring, must set monitoring_enabled true
+# if you set monitoring_enabled false, need to set prometheusEndpoint prometheusSecondaryEndpoint in `kubesphere-minimal.yaml`
+monitoring_enabled: false
+
 # monitoring deployment configuration
 # prometheus replicas numbers,
 # 2 means better availability, but more resource consumption

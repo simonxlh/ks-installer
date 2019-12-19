@@ -28,6 +28,7 @@ data:
       port: {{ console_port }}
 
     monitoring:
+      enabled: {{ monitoring_enabled }} 
       prometheusReplicas: {{ prometheus_replicas | default(2) }}
       prometheusMemoryRequest: {{ prometheus_memory_request }}
       prometheusVolumeSize: {{ prometheus_volume_size }}
